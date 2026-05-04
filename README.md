@@ -35,7 +35,7 @@ To understand how it work, one should have some skills at _negative frequencies_
 
 The magic here is that back annotation is also true. If we can filter out all half of band (say negative part) but keep all other part (positive), we will solve the question and got two signals with 90 degree phase shift at "any" frequency, which is exactly we need. This is exactly what Hilbert filters are for. Check the yellow line: it is filter above at work. 
 
-
+<img src="img/hilbertfilter-at-work.png" />
 
 Note that, unlike ordinary LPF, Hilbert filters are can't be ideal: they are approximations, with tradeoffs for selectivity, bandwidth, stop band attenuation, delay, CPU cost, etc. Most hard is near-zero filtration, and Olli Niemitalo's filters are exceptionally good at that.
 The bad news is Hilbert filter is not just phase-shifts the incoming signal. Rather, it produce two outputs with 90 degree phase shift, _but_, phase relation to incoming signal is not defined. So it can't be used for my task. (TODO: Still try this approach, i.e. input signal also to be passed thru Hilbert filter, is it good for voice?). P.S. Btw, the pulse-measured delay of Olli Niemitalo's filter is pretty good, less than two samples.
