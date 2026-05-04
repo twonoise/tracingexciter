@@ -47,8 +47,8 @@ The only hope is, musicians are says that the phase relation between fundamental
 
 One may also note that result is somewhat similar to add 1st obertone (2x of fundamental tone) to signal; and, as it is even, it should form the consonance (unlike of regular/symmetrical non-linearity like limiters/compressors, which add 2nd (3x) obertone, which is odd, so it's dissonant).
 
-![Uploading tracingexciter.png…]()
-_Fig. 2_
+[_Fig. 2_](/img/tracingexciter.png)
+
 
 
 LICENSE
