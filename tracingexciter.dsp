@@ -1,4 +1,4 @@
-// faust2lv2 tracingexciter.dsp  &&  sed -i -e 's/out0/OutI/g' -e 's/out1/OutQ/g' tracingexciter.lv2/tracingexciter.ttl  &&  cp -R ./tracingexciter.lv2/ /usr/local/lib/lv2/
+// faust2lv2 tracingexciter.dsp  &&  cp -R ./tracingexciter.lv2/ /usr/local/lib/lv2/
 
 declare name "TracingExciter"; // No spaces for better JACK port names.
 declare version "2026";
