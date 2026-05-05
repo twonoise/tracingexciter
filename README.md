@@ -37,6 +37,8 @@ The magic here is that back annotation is also true. If we can filter out all ha
 
 <img src="img/hilbertfilter-at-work.png" />
 
+<tt>_Fig. 1. Great job at 192k S/s. At 48k S/s, it will be even way better, include near-zero step._</tt>
+
 Note that, unlike ordinary LPF, Hilbert filters are can't be ideal: they are approximations, with tradeoffs for selectivity, bandwidth, stop band attenuation, delay, CPU cost, etc. Most hard is near-zero filtration, and Olli Niemitalo's filters are exceptionally good at that.
 The bad news is Hilbert filter is not just phase-shifts the incoming signal. Rather, it produce two outputs with 90 degree phase shift, _but_, phase relation to incoming signal is not defined. So it can't be used for my task. (_TODO: Still try this approach, i.e. input signal also to be passed thru Hilbert filter, is it good for voice_?). P.S. Btw, the pulse-measured delay of Olli Niemitalo's filter is pretty good, less than two samples.
 
@@ -47,6 +49,8 @@ The only hope is, musicians are says that the phase relation between fundamental
 One may also note that result is somewhat similar to add 1st obertone (2x of fundamental tone) to signal; and, as it is even, it should form the consonance (unlike of regular/symmetrical non-linearity like limiters/compressors, which add 2nd (3x) obertone, which is odd, so it's dissonant).
 
 <img src="img/tracingexciter.png" />
+
+<tt>_Fig. 2. Plugin host is provide human interface for our realtime DSP._</tt>
 
 
 LICENSE
