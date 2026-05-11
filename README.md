@@ -33,13 +33,15 @@ Most close approach i found so far is **Hilbert Filter**. It is seldom thing tha
 
 To understand how it work, one should have some skills at _negative frequencies_ approach. One may recall that any real mono signal, like voice or sine tone, appears like two components, 1/2 amplitude each, on its _full_ spectrum, one of which is below zero Hz. Check the blue line on picture below, it is just mono sine tone (<small>_in fact, with noise added for well defined plot, but we omit noise talks here_</small>). There is not enough information in mono signal to make it not to be exactly mirrored at zero point; there is some information should be added. Simplest example if we _phase shifted_ it (not delayed! as delay will work for one tone only) by 90 degree, and use this new signal as complementary or _**Q**uadrature_ one. They both, together with original _**I**n-phase_ one, form a _complex_ or _IQ_ signal, and it is enough to have negative and positive frequencies in it completely independent: in this case with phase shift, there will be only one (positive or negative) tone of full amplitude remains on spectrum (which one, is phase shift sign depend).
 
-The magic here is that back annotation is also true. If we can filter out all half of band (say negative part) but keep all other part (positive), we will solve the question and got two signals with 90 degree phase shift at "any" frequency, which is exactly we need. This is exactly what Hilbert filters are for. Check the yellow line: it is filter above at work. 
+The magic here is that back annotation is also true. If we can filter out all half of band (say negative part) but keep all other part (positive), we will solve the question and got two signals with 90 degree phase shift at "any" frequency, which is exactly we need. This is exactly what Hilbert filters are for. The problem is, despite its simple definition, create this filter is way harder than one may expect.
+
+Check the yellow line: it is filter above at work. 
 
 <img src="img/hilbertfilter-at-work.png" />
 
 <tt>_Fig. 1. Great job at 192k S/s. At 48k S/s, it will be even way better, include near-zero step._</tt>
 
-Note that, unlike ordinary LPF, Hilbert filters are can't be ideal: they are approximations, with tradeoffs for selectivity, bandwidth, stop band attenuation, delay, CPU cost, etc. Most hard is near-zero filtration, and Olli Niemitalo's filters are exceptionally good at that.
+Note that, unlike ordinary LPF, Hilbert filters are not only way harder to calculate, but also can't be ideal: they are approximations, with tradeoffs for selectivity, bandwidth, stop band attenuation, delay, CPU cost, etc. Most hard is near-zero filtration, and Olli Niemitalo's filters are exceptionally good at that.
 The bad news is Hilbert filter is not just phase-shifts the incoming signal. Rather, it produce two outputs with 90 degree phase shift, _but_, phase relation to incoming signal is not defined. So it can't be used for my task. (_TODO: Still try this approach, i.e. input signal also to be passed thru Hilbert filter, is it good for voice_?). P.S. Btw, the pulse-measured delay of Olli Niemitalo's filter is pretty good, less than two samples.
 
 So even after months, i am still not solved it.
